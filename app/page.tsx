@@ -140,20 +140,20 @@ export default function WeatherApp() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-50 flex flex-col items-center py-20 px-4 font-sans text-gray-800">
+    <div className="min-h-screen bg-sky-50 flex flex-col items-center py-10 sm:py-20 px-4 font-sans text-gray-800">
       <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-sky-600">🌤️ リアルタイム天気予報</h1>
 
-      <div className="flex gap-4 mb-12 w-full max-w-sm">
+      <div className="flex gap-3 mb-8 sm:mb-12 w-full max-w-sm">
         <input
           type="text"
-          placeholder="街の名前を入力 (例: ロンドン)"
+          placeholder="都市名を入力 (例: ロンドン)"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          className="flex-1 px-4 py-3 rounded-full border-2 border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 shadow-sm"
+          className="flex-1 min-w-0 px-4 py-3 rounded-full border-2 border-sky-200 focus:outline-none focus:ring-2 focus:ring-sky-400 shadow-sm"
         />
         <button
           onClick={onSearch}
-          className="bg-sky-500 text-white px-6 py-3 rounded-full font-bold shadow-sm hover:bg-sky-600 transition-colors"
+          className="shrink-0 bg-sky-500 text-white px-4 py-3 rounded-full font-bold shadow-sm hover:bg-sky-600 transition-colors"
         >
           検索🔍
         </button>
@@ -178,15 +178,15 @@ export default function WeatherApp() {
         </button> */}
       </div>
 
-      <div className="bg-white w-full max-w-sm rounded-3xl shadow-xl p-8 text-center border-8 border-sky-400">
+      <div className="bg-white w-full max-w-sm rounded-3xl shadow-xl p-6 sm:p-8 text-center border-4 sm:border-8 border-sky-400">
         {/* ▼ 箱が1つになったので「weather.cityName」のようにドットで中身を取り出す！ */}
-        <h2 className="text-2xl font-bold text-gray-600 mb-6">{weather.cityName}</h2>
+        <h2 className="text-2xl font-bold text-gray-600 mb-6 break-all">{weather.cityName}</h2>
 
         <div>
-          <div className="text-6xl font-black text-gray-800 mb-2">
-            {getWeatherIcon(weather.weatherCode)}
+          <div className="text-5xl mb-2">{getWeatherIcon(weather.weatherCode)}</div>
+          <div className="text-5xl sm:text-6xl font-black text-gray-800 mb-2">
             {weather.temperature}
-            <span className="text-3xl text-gray-500 font-bold"> ℃</span>
+            <span className="text-2xl sm:text-3xl text-gray-500 font-bold"> ℃</span>
           </div>
           <p className="text-gray-500 font-medium mt-4">風速: {weather.windSpeed} km/h</p>
         </div>
