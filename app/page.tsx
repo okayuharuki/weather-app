@@ -140,10 +140,10 @@ export default function WeatherApp() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-50 flex flex-col items-center py-20 font-sans text-gray-800">
-      <h1 className="text-4xl font-bold mb-8 text-sky-600">🌤️ リアルタイム天気予報</h1>
+    <div className="min-h-screen bg-sky-50 flex flex-col items-center py-20 px-4 font-sans text-gray-800">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-sky-600">🌤️ リアルタイム天気予報</h1>
 
-      <div className="flex gap-4 mb-12 w-96">
+      <div className="flex gap-4 mb-12 w-full max-w-sm">
         <input
           type="text"
           placeholder="街の名前を入力 (例: ロンドン)"
@@ -178,7 +178,7 @@ export default function WeatherApp() {
         </button> */}
       </div>
 
-      <div className="bg-white w-96 rounded-3xl shadow-xl p-8 text-center border-8 border-sky-400">
+      <div className="bg-white w-full max-w-sm rounded-3xl shadow-xl p-8 text-center border-8 border-sky-400">
         {/* ▼ 箱が1つになったので「weather.cityName」のようにドットで中身を取り出す！ */}
         <h2 className="text-2xl font-bold text-gray-600 mb-6">{weather.cityName}</h2>
 
